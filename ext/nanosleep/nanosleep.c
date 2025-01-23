@@ -30,6 +30,8 @@ nsleep(VALUE mod, VALUE sec, VALUE nsec, VALUE hold_gvl)
 }
 
 void Init_nanosleep() {
+    rb_ext_ractor_safe(true);
+
     VALUE mNanosleep = rb_define_module("Nanosleep");
 
     rb_define_method(mNanosleep, "nsleep", nsleep, 3);
