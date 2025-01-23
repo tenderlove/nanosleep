@@ -18,6 +18,12 @@ Nanosleep.s(2)
 # Sleep for 2 seconds while holding the GVL
 Nanosleep.s(2, hold_gvl: true)
 
+# Sleep for 100 milliseconds without holding the GVL
+Nanosleep.ms(100)
+
+# Sleep for 100 milliseconds while holding the GVL
+Nanosleep.ms(100, hold_gvl: true)
+
 # Sleep for 100 nanoseconds without holding the GVL
 Nanosleep.ns(100)
 
