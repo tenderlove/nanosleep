@@ -6,11 +6,9 @@ static void *
 do_sleep(void * _req)
 {
     struct timespec * req = (struct timespec *)_req;
-    struct timespec rem;
 
-    while (nanosleep(req, &rem) == -1 && errno == EINTR) {
-        req = &rem;
-    }
+    nanosleep(req, NULL);
+
     return NULL;
 }
 
